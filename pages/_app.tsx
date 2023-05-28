@@ -37,6 +37,14 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         }}
         wrappedWithChakra={true}
         signerOptions={signerOptions}
+        endpointOptions={{
+          endpoints: {
+            empowerchaindevnet: {
+              rpc: ['https://devnet.empowerchain.io:26657'],
+              rest: ['https://devnet.empowerchain.io:1317'],
+            }
+          }
+        }}
       >
         <Component {...pageProps} />
       </ChainProvider>
