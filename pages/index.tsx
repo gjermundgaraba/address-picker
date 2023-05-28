@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Container maxW="5xl" py={10}>
       <Head>
-        <title>Address picker</title>
+        <title>EmpowerChain Address picker</title>
         <meta name="description" content="Pick and copy your address" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
