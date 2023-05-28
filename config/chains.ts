@@ -23,7 +23,13 @@ export const empowerchainDevnet: Chain = {
         address: 'https://devnet.empowerchain.io:26657',
         provider: 'empower',
       }
-    ]
+    ],
+    rest: [
+      {
+        address: 'https://devnet.empowerchain.io:1317',
+        provider: 'empower',
+      }
+    ],
   },
 }
 
