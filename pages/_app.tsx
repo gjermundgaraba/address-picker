@@ -8,7 +8,6 @@ import { wallets as leapWallets } from '@cosmos-kit/leap';
 
 import { SignerOptions } from '@cosmos-kit/core';
 import { chains, assets } from 'chain-registry';
-import {empowerchainAssetList, empowerchainDevnet} from "../config";
 
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
   const signerOptions: SignerOptions = {
@@ -20,8 +19,8 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={defaultTheme}>
       <ChainProvider
-        chains={[...chains, empowerchainDevnet]}
-        assetLists={[...assets, empowerchainAssetList]}
+        chains={[...chains]}
+        assetLists={[...assets]}
         wallets={[...keplrWallets, ...cosmostationWallets, ...leapWallets]}
         walletConnectOptions={{
           signClient: {
@@ -37,14 +36,6 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         }}
         wrappedWithChakra={true}
         signerOptions={signerOptions}
-        endpointOptions={{
-          endpoints: {
-            empowerchaindevnet: {
-              rpc: ['https://devnet.empowerchain.io:26657'],
-              rest: ['https://devnet.empowerchain.io:1317'],
-            }
-          }
-        }}
       >
         <Component {...pageProps} />
       </ChainProvider>
