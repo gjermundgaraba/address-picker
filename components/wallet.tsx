@@ -12,7 +12,7 @@ import { WalletCardSection } from './card';
 
 export const WalletSection = () => {
   const [chainName, setChainName] = useState<ChainName | undefined>(
-    'empowerchain'
+    'empowerchaindevnet'
   );
   const { chainRecords, getChainLogo } = useManager();
 
@@ -30,7 +30,7 @@ export const WalletSection = () => {
   );
 
   useEffect(() => {
-    setChainName(window.localStorage.getItem('selected-chain') || 'empowerchain');
+    setChainName(window.localStorage.getItem('selected-chain') || 'empowerchaindevnet');
   }, []);
 
   const onChainChange: handleSelectChainDropdown = async (
